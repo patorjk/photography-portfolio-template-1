@@ -16,6 +16,7 @@ import {
 import About from './About.js'
 import Footer from './Footer.js'
 import createHistory from 'history/createBrowserHistory'
+import config from '../../app.config.js';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -39,19 +40,19 @@ function updatePageTitle(location) {
 
 	switch(location.pathname) {
 		case "/":
-			document.title = "Patrick Gillespie Photography";
+			document.title = config.title.main;
 			break;
 		case "/about":
-			document.title = "About Patrick";
+			document.title = config.title.about;
 			break;
 		case /category\/[-_a-zA-Z0-9\/]+$/.test(location.pathname):
-			document.title = "Patrick Gillespie Photography";
+			document.title = config.title.main;
 			break;
 		case /photo\/[-_a-zA-Z0-9\/]+$/.test(location.pathname):
-			document.title = "Patrick Gillespie Photography";
+			document.title = config.title.main;
 			break;
 		default:
-			document.title = "Patrick Gillespie Photography";
+			document.title = config.title.main;
 	}
 }
 

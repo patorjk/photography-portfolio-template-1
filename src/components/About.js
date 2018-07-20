@@ -50,12 +50,7 @@ function AboutBlurb(props) {
 	return (
 		<div style={props.style}>
 			<h3 style={headerStyle}>About</h3>
-			<p>
-				My name is Pat, I'm a software engineer and amateur photographer. I'm married with 2 kids, I don't sleep enough, and I enjoy creating stuff. I setup this site to show off some of my favorite photos. If you're interested in more of my work you can find me on <a href="https://www.flickr.com/photos/40423570@N07/" target="_blank">Flickr</a> and <a href="https://www.instagram.com/patorjk/" target="_blank">Instagram</a>.
-			</p>
-			<p>
-				I wrote the code for this site using ReactJS and have put the code up on github. (edit: TODO). Additionally, I run a programming site which you can find here: <a href="http://patorjk.com/" target="_blank">patorjk.com</a>
-			</p>
+			<div dangerouslySetInnerHTML={{__html:config.about.blurb}} />
 		</div>
 	);
 }

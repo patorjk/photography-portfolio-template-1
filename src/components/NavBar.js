@@ -8,6 +8,7 @@ import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MediaQuery from 'react-responsive';
+import config from '../../app.config.js';
 
 class NavBar extends React.Component {
 
@@ -53,7 +54,7 @@ class NavBar extends React.Component {
 				<Toolbar>
 					<MediaQuery minWidth={700}>
 						<Typography variant="title" color="inherit" to="/" component={Link} style={titleStyle}>
-							Patrick Gillespie Photography
+							{config.title.main}
 						</Typography>
 						<div style={bStyle}></div>
 					</MediaQuery>
@@ -78,10 +79,10 @@ class NavBar extends React.Component {
 
 					<MediaQuery minWidth={700}>
 						<div style={rightItemStyle}>follow →</div>
-						<a href="https://www.flickr.com/photos/40423570@N07/" target="_blank" style={rightItemStyle}>
+						<a href={config.urls.flickr} target="_blank" style={rightItemStyle}>
 							<img src={require('../images/flickr.png')} width={32} />
 						</a>
-						<a href="https://www.instagram.com/patorjk/" target="_blank">
+						<a href={config.urls.instagram} target="_blank">
 							<img src={require('../images/instagram.png')} width={32} />
 						</a>
 					</MediaQuery>
