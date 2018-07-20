@@ -59,8 +59,8 @@ function updatePageTitle(location) {
 const history = createHistory()
 history.listen((location, action) => {
 
-	console.log('history');
-	console.dir(location);
+	//console.log('history');
+	//console.dir(location);
 
 	updatePageTitle(location);
 
@@ -81,7 +81,6 @@ history.listen((location, action) => {
 class App extends Component {
 	
 	componentWillMount() {
-		console.log('mount!');
 		updatePageTitle(location); // initial set
 	}
 
@@ -110,7 +109,7 @@ class App extends Component {
 							</React.Fragment>
 						)} /> 
 
-						<Redirect from="/" exact to="/category/main" />
+						<Redirect from="/" exact to={"/category/" + config.defaultCategory} />
 
 					</Switch>
 

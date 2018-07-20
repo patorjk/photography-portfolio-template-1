@@ -49,6 +49,8 @@ class NavBar extends React.Component {
 			textDecoration: 'none',
 		}
 
+		const myHandleClose = this.handleClose;
+
 		return (
 			<AppBar position="fixed" color="default">
 				<Toolbar>
@@ -67,10 +69,11 @@ class NavBar extends React.Component {
 						open={Boolean(anchorEl)}
 						onClose={this.handleClose}
 					>
-						<MenuItem onClick={this.handleClose} to="/" component={Link}>Main</MenuItem>
-						<MenuItem onClick={this.handleClose} to="/category/baltimore" component={Link}>Baltimore</MenuItem>
-						<MenuItem onClick={this.handleClose} to="/category/maryland" component={Link}>Maryland</MenuItem>
-						<MenuItem onClick={this.handleClose} to="/category/people" others={{title:'About'}} component={Link}>People</MenuItem>
+
+						{config.categories.map(function(item) {
+							return <MenuItem key={item.tag} onClick={myHandleClose} to={"/category/" + item.tag} component={Link}>{item.display}</MenuItem>
+						})}
+
 					</Menu>
 
 					<Button color="inherit" to="/about" component={Link} >About</Button>

@@ -15,6 +15,22 @@ settings.urls = {};
 settings.urls.flickr = 'https://www.flickr.com/photos/40423570@N07/';
 settings.urls.instagram = 'https://www.instagram.com/patorjk/';
 
+settings.defaultCategory = "main";
+settings.categories = [{
+	tag: "main",
+	display: "Main",
+},{
+	tag: "baltimore",
+	display: "Baltimore",
+},{
+	tag: "maryland",
+	display: "Maryland",
+},{
+	tag: "people",
+	display: "People",
+}];
+
+
 settings.about = {};
 settings.about.blurb = `
 <p>

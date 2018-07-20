@@ -2,6 +2,16 @@ import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
+function getPhotoIndex(photoName, photos) {
+	var idx = 0; // default
+	photos.forEach(function(item, index) {
+		if (item.name === photoName) {
+			idx = index;
+		}
+	});
+	return idx;
+}
+
 class Lightbox extends Component {
 
 	constructor(props) {
@@ -59,19 +69,40 @@ class Lightbox extends Component {
 		this.props.history.push(this.props.baseUrl + '/photo/' + name);
 	}
 
-	getCurrentPhotoIndex() {
-		var idx = 0;
-		var photoName = this.props.photoName;
-		this.props.photos.forEach(function(item, index) {
-			if (item.name === photoName) {
-				idx = index;
-			}
-		});
-		return idx;
+	getCurrentPhoto() {
+		return this.props.photos[ this.getCurrentPhotoIndex() ];
 	}
 
-	getCurrentPhoto() {
-		return this.props.photos[this.getCurrentPhotoIndex()];
+	getCurrentPhotoIndex() {
+		return getPhotoIndex(this.props.photoName, this.props.photos);
+	}
+
+	static getDerivedStateFromProps(newProps, prevState) {
+		var newPhoto = newProps.photos[getPhotoIndex(newProps.photoName, newProps.photos)];
+
+		if (prevState.loadedImgSrc !== newPhoto.src.lg) {
+			return {
+				imgStyle: {
+					maxWidth: '100%',
+					maxHeight: window.innerHeight + 'px',
+					opacity: 0,
+				}
+			};
+		}
+		return null;
+	}
+
+	imgLoaded() {
+		const curPhoto = this.getCurrentPhoto();
+	   
+		this.setState({
+			imgStyle: {
+				maxWidth: '100%',
+				maxHeight: window.innerHeight + 'px',
+				opacity: 1,
+			},
+			loadedImgSrc: curPhoto.src.lg,
+		});
 	}
 
 	render() {
