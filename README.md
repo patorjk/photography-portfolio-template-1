@@ -34,8 +34,11 @@ The app uses resized versions of your photographs along with metadata it reads f
 node utils/create-images.js -i /directory/to/full_sized_photos/
 ```
 
-That will create a src/photos directory with the new files. This script also has a "--exif-only" option for when you just want to re-generate the metadata file. I've used the metadata fields that Lightroom provides for the title and description of an image. You can look at the create-images.js script for more info. Images displayed on the main page have "main" as a tag in their metadata. In Lightroom, this field is the "Keyword Tags" field in the "Library" module.
+That will create a src/photos directory with the resized images along with a file called "photos.js". This file contains metadata about all of your photographs for use in the app. This script also has a "--exif-only" option for when you just want to re-generate photos.js. I've used the metadata fields that Lightroom provides for the title and description of an image. You can look at the create-images.js script for more info. 
 
+In the portfolio app, images displayed on the main page have "main" as a tag in their metadata. In Lightroom, this field is the "Keyword Tags" field which you can find on the right hand side pane in the "Library" module.
+
+In Lightroom, I've found the easiest workflow is to tag all of the images I want to use with "portfolio", and then from there, editing the metadata of the images and export them to a "full_sized_photos" directory which I can run the create-image.js on.
 
 ## Hard coded updates
 
