@@ -1,6 +1,6 @@
 # Photography Portfolio Template
 
-This is the project I development to create the website [patrickgillespie.com](https://patrickgillespie.com). 
+This is the project I development to create the website [patrickgillespie.com](http://patrickgillespie.com). 
 
 ## Quick Start
 
