@@ -40,10 +40,9 @@ In the portfolio app, images displayed on the main page have "main" as a tag in 
 
 In Lightroom, I've found the easiest workflow is to tag all of the images I want to use with "portfolio", and then from there, editing the metadata of the images and export them to a "full_sized_photos" directory which I can run the create-image.js on.
 
-## Hard coded updates
+## What to edit
 
-* You'll want to edit index.html:
+* You'll want to edit src/index.html:
   * Remove or update Google Analytics code.
   * Remove or update meta tags at the top of the page.
-* Right now the categories are hard coded in the NavBar.js file.
-* Other configurable settings can be made by editing app.config.js
+* All other updates that you'll need to do can be made by editing app.config.js
