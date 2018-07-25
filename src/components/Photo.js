@@ -35,6 +35,7 @@ class Photo extends Component {
 				position:'relative',
 				opacity: 1,
 				cursor: 'pointer',
+				flexShrink: 0,
 			},
 			hoverStyle: getHoverStyle({opacity: 0}),
 			imageStyle: getImageStyle({opacity: 1}),

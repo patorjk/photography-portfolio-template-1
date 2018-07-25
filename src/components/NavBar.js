@@ -9,6 +9,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MediaQuery from 'react-responsive';
 import config from '../../app.config.js';
+import ReactGA from 'react-ga';
 
 class NavBar extends React.Component {
 
@@ -82,12 +83,21 @@ class NavBar extends React.Component {
 
 					<MediaQuery minWidth={700}>
 						<div style={rightItemStyle}>follow →</div>
-						<a href={config.urls.flickr} target="_blank" style={rightItemStyle}>
+						<ReactGA.OutboundLink
+							to={config.urls.flickr}
+							target="_blank" 
+							style={rightItemStyle}
+							eventLabel="Flickr"
+						>
 							<img src={require('../images/flickr.png')} width={32} />
-						</a>
-						<a href={config.urls.instagram} target="_blank">
+						</ReactGA.OutboundLink>
+						<ReactGA.OutboundLink 
+							to={config.urls.instagram} 
+							target="_blank"
+							eventLabel="Instagram"
+						>
 							<img src={require('../images/instagram.png')} width={32} />
-						</a>
+						</ReactGA.OutboundLink>
 					</MediaQuery>
 				</Toolbar>
 			</AppBar>
