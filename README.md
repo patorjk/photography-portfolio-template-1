@@ -43,6 +43,5 @@ In Lightroom, I've found the easiest workflow is to tag all of the images I want
 ## What to edit
 
 * You'll want to edit src/index.html:
-  * Remove or update Google Analytics code.
   * Remove or update meta tags at the top of the page.
 * All other updates that you'll need to do can be made by editing app.config.js
