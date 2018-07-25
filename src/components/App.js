@@ -17,8 +17,11 @@ import About from './About.js'
 import Footer from './Footer.js'
 import createHistory from 'history/createBrowserHistory'
 import config from '../../app.config.js';
+import ReactGA from 'react-ga';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+ReactGA.initialize(config.googleAnalyticsId);
 
 const theme = createMuiTheme({
 	palette: {
@@ -64,18 +67,8 @@ history.listen((location, action) => {
 
 	updatePageTitle(location);
 
-	try {
-		// set new url and title
-		ga('set', {
-		  page: location.pathname,
-		  title: document.title
-		});
-
-		// send it for tracking
-		ga('send', 'pageview');
-	} catch(err) {
-		console.warn('google analytics not setup');
-	}
+  	ReactGA.set({ page: location.pathname });
+  	ReactGA.pageview(location.pathname);
 });
 
 class App extends Component {

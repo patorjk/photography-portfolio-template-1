@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom';
 function getHoverStyle(props) {
 	return Object.assign({
 		backgroundColor: 'transparent',
-		opacity: 0.5,
+		opacity: 0.75,
 		position: 'absolute',
 		top: 0,
 		left: 0,
@@ -88,11 +88,14 @@ class Photo extends Component {
 		}
 
 		var hoverTextStyle = {
-			fontSize: '21px',
+			fontSize: '14px',
 			position: 'absolute',
-			top: '50%',
-			left: '50%',
-			transform: 'translateX(-50%) translateY(-50%)'
+			bottom: 4,
+			left: 8,
+			color: 'white',
+			//top: '50%',
+			//left: '50%',
+			//transform: 'translateX(-50%) translateY(-50%)'
 		}
 
 		var src = this.props.img.src[this.props.size];
@@ -104,7 +107,7 @@ class Photo extends Component {
 
 				<div style={this.state.hoverStyle} onClick={this.imgClick}>
 					<div style={hoverTextStyle}>
-						
+						VIEW
 					</div>
 				</div>
 			</div>

@@ -15,6 +15,8 @@ settings.urls = {};
 settings.urls.flickr = 'https://www.flickr.com/photos/40423570@N07/';
 settings.urls.instagram = 'https://www.instagram.com/patorjk/';
 
+settings.googleAnalyticsId = 'UA-76058158-1';
+
 settings.defaultCategory = "main";
 settings.categories = [{
 	tag: "main",
